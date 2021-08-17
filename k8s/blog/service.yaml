@@ -13,3 +13,15 @@ spec:
   selector:
     app: blog
   type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: blog
+spec:
+  ports:
+  - port: 3306
+  selector:
+    app: mysql
+  clusterIP: None
