@@ -4,6 +4,7 @@ metadata:
   labels:
     app: blog
   name: blog
+  namespace: blog
 spec:
   replicas: 2
   selector:

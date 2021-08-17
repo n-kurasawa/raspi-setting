@@ -4,6 +4,7 @@ metadata:
   labels:
     app: blog
   name: blog-service
+  namespace: blog
 spec:
   ports:
   - port: 80
