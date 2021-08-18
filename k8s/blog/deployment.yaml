@@ -6,7 +6,7 @@ metadata:
   name: blog
   namespace: blog
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: blog
@@ -21,6 +21,31 @@ spec:
         name: blog
         ports:
         - containerPort: 3000
+        resources: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: blog-api
+  name: blog-api
+  namespace: blog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: blog-api
+    spec:
+      containers:
+      - image: naohirokurasawa/blog-api
+        name: blog-api
+        ports:
+        - containerPort: 8080
         resources: {}
 ---
 apiVersion: apps/v1

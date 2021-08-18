@@ -25,3 +25,17 @@ spec:
   selector:
     app: mysql
   clusterIP: None
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: blog-api
+  name: blog-api
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: blog-api
