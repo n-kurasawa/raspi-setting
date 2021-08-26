@@ -10,11 +10,11 @@ spec:
   rules:
     - http:
         paths:
-          - path: /blog(/|$)(.*)
+          - path: /()(.*)
             pathType: Prefix
             backend:
               service:
-                name: blog-service
+                name: blog
                 port:
                   number: 80
     - http:
