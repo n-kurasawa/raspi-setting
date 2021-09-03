@@ -19,10 +19,19 @@ spec:
                   number: 80
     - http:
         paths:
-          - path:  /api(/|$)(.*)
+          - path: /api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: blog-api
+                port:
+                  number: 80
+    - http:
+        paths:
+          - path: /()(admin.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: blog-admin
                 port:
                   number: 80
