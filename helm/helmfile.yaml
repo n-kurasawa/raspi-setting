@@ -1,3 +1,4 @@
 helmfiles:
   - path: ./ingress-nginx/helmfile.yaml
   - path: ./metallb/helmfile.yaml
+  - path: ./metrics-server/helmfile.yaml
